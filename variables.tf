@@ -3,9 +3,14 @@ variable "location" {
   default     = "East US"
 }
 
-variable "count" {
+variable "count_windows" {
   description = "Azure location in which to create resources"
-  default     = 1
+  default     = 0
+}
+
+variable "count_linux" {
+  description = "Azure location in which to create resources"
+  default     = 2
 }
 
 variable "dns_prefix" {

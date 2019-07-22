@@ -42,7 +42,7 @@ resource "null_resource" "download_openssh_key" {
 
 module "linuxservers" {
   source              = "Azure/compute/azurerm"
-  nb_instances        = "${var.count}"
+  nb_instances        = "${var.count_linux}"
   location            = "${var.location}"
   vm_os_simple        = "UbuntuServer"
   public_ip_dns       = ["${var.dns_prefix}-lin"]           // change to a unique name per datacenter region
@@ -59,10 +59,10 @@ module "linuxservers" {
 module "windowsserver" {
   source              = "Azure/compute/azurerm"
   version             = "1.2.1"
-  nb_instances        = "${var.count}"
+  nb_instances        = "${var.count_windows}"
   location            = "${var.location}"
   resource_group_name = "${var.dns_prefix}-rg"
-  vm_hostname         = "pwc-ptfe"
+  vm_hostname         = "${var.dns_prefix}-win"
   admin_username      = "${local.VarAccID}"
   admin_password      = "${random_string.password.result}"
   vm_os_simple        = "WindowsServer"

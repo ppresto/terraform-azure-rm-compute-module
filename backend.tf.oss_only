@@ -1,0 +1,10 @@
+terraform {
+  backend "remote" {
+    hostname = "app.terraform.io"
+    organization = "ppresto_ptfe"
+
+    workspaces {
+      name = "tfc-guides-azurevm"
+    }
+  }
+}

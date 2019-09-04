@@ -1,3 +1,5 @@
+# terraform-azurerm-azure-instance
+
 # Example For Using the Azure Compute Module
 This Terraform configuration provides an example for using the [Azure compute module](https://registry.terraform.io/modules/Azure/compute/azurerm/1.1.0) from the public Terraform Registry. It is configured for use with Terraform Enterprise (TFE).
 
